@@ -104,6 +104,47 @@ var paletto = function () {
                 //code qui compte les voisins
                 return nbvoisins;
             }
+
+            this.win=function(){
+               var win=0;
+               if(joueur1['noir']==6){
+                   win=1;
+               }
+                if(joueur1['jaune']==6){
+                    win=1;
+                }
+                if(joueur1['blanc']==6){
+                    win=1;
+                }
+                if(joueur1['vert']==6){
+                    win=1;
+                }
+                if(joueur1['bleu']==6){
+                    win=1;
+                }
+                if(joueur1['rouge']==6){
+                    win=1;
+                }
+                if(joueur2['noir']==6){
+                    win=2;
+                }
+                if(joueur2['jaune']==6){
+                    win=2;
+                }
+                if(joueur2['blanc']==6){
+                    win=2;
+                }
+                if(joueur2['vert']==6){
+                    win=2;
+                }
+                if(joueur2['bleu']==6){
+                    win=2;
+                }
+                if(joueur2['rouge']==6){
+                    win=2;
+                }
+                return win;
+            }
 // public methods
         }
         ;
