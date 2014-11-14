@@ -14,5 +14,7 @@ PalettoTestCase.prototype.testB = function () {
     var couleur=game.tray[5][0];
     game.play(5,0);
     assertTrue(game.tray[5][0]==="vide");
+    console.log(game.joueur1[couleur]);
     assertTrue(game.joueur1[couleur]===1);
+
 };

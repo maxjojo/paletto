@@ -10,15 +10,14 @@ var paletto = function () {
     this.couleurs5 = ['blanc', 'vert', 'jaune', 'noir', 'jaune', 'vert'];
     this.couleurs6 = ['jaune', 'bleu', 'noir', 'rouge', 'vert', 'noir'];
     this.tour=0;
-    this.joueur1=new Array(6);
-    this.joueur2=new Array(6);
+    this.joueur1={'noir':0,'vert':0,'blanc':0,'bleu':0,'rouge':0,'jaune':0};
+    this.joueur2={'noir':0,'vert':0,'blanc':0,'bleu':0,'rouge':0,'jaune':0};
 
 
     this.tray = new Array(6);
     for (var row = 0; row < 6; row++) {
         this.tray[row] = new Array(6);
     }
-    this.player = 1;
 
     this.init = function () {
         for (var column = 0; column < 6; column++) {
@@ -28,8 +27,6 @@ var paletto = function () {
             this.tray[3][column] = this.couleurs4[column];
             this.tray[4][column] = this.couleurs5[column];
             this.tray[5][column] = this.couleurs6[column];
-            this.joueur1[this.couleurs1[column]]=0;
-            this.joueur2[this.couleurs1[column]]=0;
         }
     };
 
@@ -61,6 +58,26 @@ var paletto = function () {
         return bool;
     };
 
+    this.changetour = function(){
+        if(this.tour == 0)
+            this.tour = 1;
+        else
+            this.tour = 0;
+    }
 
+    this.play = function ( ligne, colonne) {
+        var couleur = this.tray[ligne][colonne];
+        this.tray[ligne][colonne] = "vide";
+        if(this.tour==0)
+        {
+            this.joueur1[couleur] = this.joueur1[couleur]+1;
+        }
+        else
+        {
+            this.joueur2[couleur] = this.joueur2[couleur]+1;
+        }
+
+        this.changetour();
+    }
 // public methods
 };
