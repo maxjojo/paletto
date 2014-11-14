@@ -36,3 +36,20 @@ PalettoTestCase.prototype.testD = function () {
 
 
 };
+
+PalettoTestCase.prototype.testE = function () {
+    var game = new paletto();
+    game.init();
+    game.play("noir");
+    game.play("vert");
+    game.play("jaune");
+    game.play("bleu");
+    game.play("blanc");
+    game.play("rouge");
+    game.play("bleu");
+    game.play("jaune");
+    game.play("noir");
+    asserttrue(game.win()==1);
+
+
+};
