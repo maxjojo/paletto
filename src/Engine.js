@@ -9,6 +9,9 @@ var paletto = function () {
     this.couleurs4 = ['rouge', 'noir', 'rouge', 'vert', 'bleu', 'blanc'];
     this.couleurs5 = ['blanc', 'vert', 'jaune', 'noir', 'jaune', 'vert'];
     this.couleurs6 = ['jaune', 'bleu', 'noir', 'rouge', 'vert', 'noir'];
+    this.tour=0;
+    this.joueur1=new Array(6);
+    this.joueur2=new Array(6);
 
 
     this.tray = new Array(6);
@@ -25,6 +28,8 @@ var paletto = function () {
             this.tray[3][column] = this.couleurs4[column];
             this.tray[4][column] = this.couleurs5[column];
             this.tray[5][column] = this.couleurs6[column];
+            this.joueur1[this.couleurs1[column]]=0;
+            this.joueur2[this.couleurs1[column]]=0;
         }
     };
 
