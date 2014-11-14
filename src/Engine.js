@@ -79,5 +79,19 @@ var paletto = function () {
 
         this.changetour();
     }
+    this.play = function ( ligne, colonne) {
+        var couleur = this.tray[ligne][colonne];
+        this.tray[ligne][colonne] = "vide";
+        if(this.tour==0)
+        {
+            this.joueur1[couleur] = this.joueur1[couleur]+1;
+        }
+        else
+        {
+            this.joueur2[couleur] = this.joueur2[couleur]+1;
+        }
+
+        this.changetour();
+    }
 // public methods
 };
