@@ -100,6 +100,10 @@ var paletto = function () {
                 }
                 return(36 - compteur);
             }
+            this.comptevoisin=function(){
+                //code qui compte les voisins
+                return nbvoisins;
+            }
 // public methods
         }
         ;
