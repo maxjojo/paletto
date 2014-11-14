@@ -53,3 +53,11 @@ PalettoTestCase.prototype.testE = function () {
 
 
 };
+PalettoTestCase.prototype.testF = function () {
+    var game = new paletto();
+    game.init();
+    game.play("noir");
+    asserttrue(game.win()==1);
+
+
+};
