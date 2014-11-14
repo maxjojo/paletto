@@ -11,8 +11,7 @@ PalettoTestCase.prototype.testA = function () {
 PalettoTestCase.prototype.testB = function () {
     var game = new paletto();
     game.init();
-    var couleur=game.tray[5][0];
-    game.play(5,0);
+    game.play("jaune");
     assertTrue(game.tray[5][0]==="vide");
     console.log(game.joueur1[couleur]);
     assertTrue(game.joueur1[couleur]===1);
@@ -22,8 +21,18 @@ PalettoTestCase.prototype.testB = function () {
 PalettoTestCase.prototype.testC = function () {
     var game = new paletto();
     game.init();
-    var couleur=game.tray[5][0];
-    game.play(5,0);
+    game.play("jaune");
     assertTrue(game.comptepiece()===35);
+
+};
+
+PalettoTestCase.prototype.testD = function () {
+    var game = new paletto();
+    game.init();
+    game.play("jaune");
+    asserttrue(game.comptevoisin(0,0)==2);
+    game.play("noir");
+    assertTrue(game.joueur2['noir']===2);
+
 
 };

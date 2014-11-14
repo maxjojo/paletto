@@ -9,9 +9,9 @@ var paletto = function () {
     this.couleurs4 = ['rouge', 'noir', 'rouge', 'vert', 'bleu', 'blanc'];
     this.couleurs5 = ['blanc', 'vert', 'jaune', 'noir', 'jaune', 'vert'];
     this.couleurs6 = ['jaune', 'bleu', 'noir', 'rouge', 'vert', 'noir'];
-    this.tour=0;
-    this.joueur1={'noir':0,'vert':0,'blanc':0,'bleu':0,'rouge':0,'jaune':0};
-    this.joueur2={'noir':0,'vert':0,'blanc':0,'bleu':0,'rouge':0,'jaune':0};
+    this.tour = 0;
+    this.joueur1 = {'noir': 0, 'vert': 0, 'blanc': 0, 'bleu': 0, 'rouge': 0, 'jaune': 0};
+    this.joueur2 = {'noir': 0, 'vert': 0, 'blanc': 0, 'bleu': 0, 'rouge': 0, 'jaune': 0};
 
 
     this.tray = new Array(6);
@@ -58,38 +58,50 @@ var paletto = function () {
         return bool;
     };
 
-    this.changetour = function(){
-        if(this.tour == 0)
+    this.changetour = function () {
+        if (this.tour == 0)
             this.tour = 1;
         else
             this.tour = 0;
     }
 
-    this.play = function ( ligne, colonne) {
-        var couleur = this.tray[ligne][colonne];
-        this.tray[ligne][colonne] = "vide";
-        if(this.tour==0)
-        {
-            this.joueur1[couleur] = this.joueur1[couleur]+1;
-        }
-        else
-        {
-            this.joueur2[couleur] = this.joueur2[couleur]+1;
-        }
+    this.possibilites = function () {
 
-        this.changetour();
-    }
-
-    this.comptepiece = function () {
-        var compteur=0;
-        for(var row=0;row<6;row++){
-            for(var column=0;column<6;column++){
-                if(this.tray[row][column]=='vide'){
-                    compteur++;
-                }
+        var t = new Array(6);
+        for (var row = 0; row < 6; row++) {
+            t[row] = new Array(6);
+        }
+        for (var row = 0; row < 6; row++) {
+            for (var column = 0; column < 6; column++) {
+                this.tray
             }
-        }
-        return(36-compteur);
-    }
+
+            this.play = function (coul) {
+                var couleur = this.tray[ligne][colonne];
+                this.tray[ligne][colonne] = "vide";
+                if (this.tour == 0) {
+                    this.joueur1[couleur] = this.joueur1[couleur] + 1;
+                }
+                else {
+                    this.joueur2[couleur] = this.joueur2[couleur] + 1;
+                }
+
+                this.changetour();
+            }
+
+            this.comptepiece = function () {
+                var compteur = 0;
+                for (var row = 0; row < 6; row++) {
+                    for (var column = 0; column < 6; column++) {
+                        if (this.tray[row][column] == 'vide') {
+                            compteur++;
+                        }
+                    }
+                }
+                return(36 - compteur);
+            }
 // public methods
-};
+        }
+        ;
+    }
+}
