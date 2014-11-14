@@ -143,6 +143,9 @@ var paletto = function () {
                 if(joueur2['rouge']==6){
                     win=2;
                 }
+                if(this.comptepiece()==0){
+                    win=tour;
+                }
                 return win;
             }
 // public methods
